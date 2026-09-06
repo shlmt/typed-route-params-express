@@ -1,7 +1,6 @@
-// import express from './lib/typedParamsExpress'
-import express from 'express'
+import express from './lib/typedParamsExpress'
+// don't import express from 'express'
 const app = express()
-app._router
 
 app.post('/users/<id:num>', (req, res) => {
 	console.log(req.params.id) // number
@@ -16,8 +15,8 @@ app.route('/u/<id:num>').get((req, res) => {
 
 const router = express.Router()
 
-router.get('/e/<comments>', (req, res) => {
-	console.log(req.params)
+router.get('/e/<comments:bool>', (req, res) => {
+	console.log(req.params) // boolean
 	res.send('ok')
 })
 
